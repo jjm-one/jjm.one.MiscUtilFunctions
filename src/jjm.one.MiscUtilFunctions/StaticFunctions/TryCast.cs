@@ -1,4 +1,6 @@
-﻿namespace jjm.one.MiscUtilFunctions
+﻿using System;
+
+namespace jjm.one.MiscUtilFunctions
 {
     public static partial class CastHelper
     {
@@ -24,7 +26,7 @@
             if (typeof(string).Equals(typeof(Tin)) && typeof(Tout).HasMethod("TryParse"))
             {
                 var param = new object?[] { input?.ToString(), null };
-                if (InvokeMethodClass.InvokeMethod<Tout, bool>(output, "TryParse", ref param) && param is not null)
+                if (InvokeHelper.InvokeMethod<Tout, bool>(output, "TryParse", ref param) && param is not null)
                 {
                     var res = param[1];
                     if (res is not null)

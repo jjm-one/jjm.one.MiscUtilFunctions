@@ -1,25 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>jjm.one.MiscUtilFunctions</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6;net7.0</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Version>1.0.0</Version>
+    <Authors>Jonas Merkle [JJM] </Authors>
+    <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
+    <PackageId>jjm.one.MiscUtilFunctions</PackageId>
+    <Title>jjm.one.MiscUtilFunctions</Title>
+    <Description>A collection of miscellaneous utility and helper functions for C# projects.</Description>
+    <PackageProjectUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions</PackageProjectUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions.git</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <WarningLevel>4</WarningLevel>
     <LangVersion>latestmajor</LangVersion>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>.\jjm.one.MiscUtilFunctions.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <LangVersion>latestmajor</LangVersion>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>.\jjm.one.MiscUtilFunctions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="StaticFunctions\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StaticFunctions\" />
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 </Project>

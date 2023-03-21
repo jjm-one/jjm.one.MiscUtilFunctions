@@ -1,8 +1,9 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 
 namespace jjm.one.MiscUtilFunctions
 {
-	public static partial class InvokeHerlper
+	public static partial class InvokeHelper
 	{
         #region Tout? return type
 

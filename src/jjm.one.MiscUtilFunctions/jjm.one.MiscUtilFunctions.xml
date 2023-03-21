@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>jjm.one.MiscUtilFunctions</name>
+    </assembly>
+    <members>
+        <member name="M:jjm.one.MiscUtilFunctions.CastHelper.TryCast``2(``0,``1@)">
+             <summary>
+             Try to cast an object into an object of a specific type.
+             </summary>
+             <typeparam name="Tin">The type of the input object.</typeparam>
+             <typeparam name="Tout">The type to cast to.</typeparam>
+             <param name="input">The object to cast.</param>
+             <param name="output">The result of the cast.</param>
+             <returns>True on success, else false.</returns>
+            *
+        </member>
+    </members>
+</doc>
