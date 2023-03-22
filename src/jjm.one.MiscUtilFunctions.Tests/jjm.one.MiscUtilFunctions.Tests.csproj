@@ -27,9 +27,6 @@
     <None Remove="StaticFunctionsTests\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="StaticFunctionsTests\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\jjm.one.MiscUtilFunctions\jjm.one.MiscUtilFunctions.csproj" />
   </ItemGroup>
 </Project>
