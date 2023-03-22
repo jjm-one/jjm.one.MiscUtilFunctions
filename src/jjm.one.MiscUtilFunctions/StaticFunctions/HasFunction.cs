@@ -13,7 +13,7 @@ namespace jjm.one.MiscUtilFunctions
         /// </summary>
         /// <param name="type">The specific type to check.</param>
         /// <param name="fctName">The specific function name.</param>
-        /// <returns>True on success, esle false.</returns>
+        /// <returns>True on success, else false.</returns>
         public static bool HasFct(this Type type, string fctName)
         {
             try
@@ -30,8 +30,8 @@ namespace jjm.one.MiscUtilFunctions
         /// Check if a specific object has a specific member function.
         /// </summary>
         /// <param name="obj">The specific object to check.</param>
-        /// <param name="fctName"></param>
-        /// <returns>True on success, esle false.</returns>
+        /// <param name="fctName">The specific function name.</param>
+        /// <returns>True on success, else false.</returns>
         public static bool HasFct(this object obj, string fctName)
         {
             return obj.GetType().HasFct(fctName);
