@@ -1,5 +1,11 @@
-﻿namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
 {
+    /// <summary>
+    /// Unit-Tests for the AddUnique functions.
+    /// </summary>
     public class AddUniqueTests
     {
         /// <summary>
