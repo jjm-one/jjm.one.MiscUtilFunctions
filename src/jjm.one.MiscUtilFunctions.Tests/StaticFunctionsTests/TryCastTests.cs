@@ -1,17 +1,7 @@
-﻿using jjm.one.MiscUtilFunctions;
-
-namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
+﻿namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
 {
 	public class TryCastTests
 	{
-        [Fact]
-        public void Test()
-        {
-            int i = 45;
-            var res = Convert.ChangeType(i, typeof(bool));
-            var res2 = (bool)res;
-        }
-
 		[Fact]
 		public void TryCastBoolInt1()
         {

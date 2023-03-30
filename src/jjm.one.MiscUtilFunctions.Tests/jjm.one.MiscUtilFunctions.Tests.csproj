@@ -1,13 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <RootNamespace>jjm.one.MiscUtilFunctions.Tests</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<TargetFramework>net7.0</TargetFramework>
+	<ImplicitUsings>disable</ImplicitUsings>
+	<Nullable>enable</Nullable>
+	<Version>1.0.0-alpha.2</Version>
+	<Authors>Jonas Merkle [JJM] </Authors>
+	<Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
+	<RootNamespace>jjm.one.MiscUtilFunctions.Tests</RootNamespace>
+	<Title>jjm.one.MiscUtilFunctions.Tests</Title>
+	<Description>A collection of miscellaneous utility and helper functions for C# projects. (Unit-Tests)</Description>
+	<PackageProjectUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions</PackageProjectUrl>
+	<RepositoryType>git</RepositoryType>
+	<RepositoryUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions.git</RepositoryUrl>
+	<SignAssembly>True</SignAssembly>
+	<AssemblyOriginatorKeyFile>./jjm.one.MiscUtilFunctions.Tests.SignKey.snk</AssemblyOriginatorKeyFile>
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
+	  
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,9 +38,6 @@
 
   <ItemGroup>
     <None Remove="StaticFunctionsTests\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="StaticFunctionsTests\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\jjm.one.MiscUtilFunctions\jjm.one.MiscUtilFunctions.csproj" />

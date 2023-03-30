@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>jjm.one.MiscUtilFunctions.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests.AddUniqueTests">
+            <summary>
+            Unit-Tests for the AddUnique functions.
+            </summary>
+        </member>
+        <member name="F:jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests.AddUniqueTests._list">
+            <summary>
+            Private string list for the tests.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests.AddUniqueTests.#ctor">
+            <summary>
+            Ctor of the <see cref="T:jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests.AddUniqueTests"/> class.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests.AddUniqueTests.CanAddTest">
+            <summary>
+            Test tries to add an unique object to a list.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests.AddUniqueTests.CanNotAddTest">
+            <summary>
+            Test tries to add a non unique object to a list.
+            </summary>
+        </member>
+    </members>
+</doc>
