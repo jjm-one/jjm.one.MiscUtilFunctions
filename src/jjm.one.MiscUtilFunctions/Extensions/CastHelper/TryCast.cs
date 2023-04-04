@@ -1,11 +1,13 @@
-﻿using System;
+﻿using jjm.one.MiscUtilFunctions.Extensions.InvokeHelper;
+using System;
 
-namespace jjm.one.MiscUtilFunctions
+namespace jjm.one.MiscUtilFunctions.Extensions.CastHelper
 {
     /// <summary>
-    /// A partial class containing multiple helper functions for casting objects.
+    /// A partial class containing multiple helper functions for casting
+    /// objects.
     /// </summary>
-    public static partial class CastHelper
+    public static partial class CastHelperExt
     {
         /// <summary>
         /// Try to cast an object into an object of a specific type.
@@ -15,7 +17,8 @@ namespace jjm.one.MiscUtilFunctions
         /// <param name="input">The object to cast.</param>
         /// <param name="output">The result of the cast.</param>
         /// <returns>True on success, else false.</returns>
-        public static bool TryCast<Tin, Tout>(this Tin input, out Tout? output) where Tout : new()
+        public static bool TryCast<Tin, Tout>(this Tin input, out Tout? output)
+            where Tout : new()
         {
             output = default;
 
@@ -25,10 +28,12 @@ namespace jjm.one.MiscUtilFunctions
                 return true;
             }
 
-            if (typeof(string).Equals(typeof(Tin)) && typeof(Tout).HasFct("TryParse"))
+            if (typeof(string).Equals(typeof(Tin)) &&
+                typeof(Tout).HasMethod("TryParse"))
             {
                 var param = new object?[] { input?.ToString(), null };
-                if (InvokeHelper.InvokeFct<Tout, bool>(output, "TryParse", ref param) && param is not null)
+                if (InvokeHelperExt.InvokeMethod<Tout, bool>
+                    (output, "TryParse", ref param) && param is not null)
                 {
                     var res = param[1];
                     if (res is not null)

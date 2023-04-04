@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using jjm.one.MiscUtilFunctions.Extensions.ListHelper;
+using System.Collections.Generic;
 using System.Linq;
 
-namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
+namespace jjm.one.MiscUtilFunctions.Tests.Extensions.ListHelper
 {
     /// <summary>
     /// Unit-Tests for the AddUnique functions.

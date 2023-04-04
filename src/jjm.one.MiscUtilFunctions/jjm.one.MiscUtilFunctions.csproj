@@ -30,6 +30,13 @@
     <DocumentationFile>./jjm.one.MiscUtilFunctions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Extensions\" />
+    <None Remove="Extensions\ListHelper\" />
+    <None Remove="Extensions\CastHelper\" />
+    <None Remove="Extensions\InvokeHelper\" />
+    <None Remove="Functions\InvokeHelper\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -38,5 +45,12 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Extensions\ListHelper\" />
+    <Folder Include="Extensions\CastHelper\" />
+    <Folder Include="Extensions\InvokeHelper\" />
+    <Folder Include="Functions\InvokeHelper\" />
   </ItemGroup>
 </Project>

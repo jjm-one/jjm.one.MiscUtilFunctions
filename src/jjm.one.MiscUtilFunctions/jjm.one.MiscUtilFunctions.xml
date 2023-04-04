@@ -4,126 +4,13 @@
         <name>jjm.one.MiscUtilFunctions</name>
     </assembly>
     <members>
-        <member name="T:jjm.one.MiscUtilFunctions.ListHelper">
+        <member name="T:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt">
             <summary>
-            A partial class containing multiple helper functions for <see cref="T:System.Collections.Generic.List`1"/>.
+            A partial class containing multiple helper functions for casting
+            objects.
             </summary>
         </member>
-        <member name="M:jjm.one.MiscUtilFunctions.ListHelper.AddUnique``1(System.Collections.Generic.List{``0},``0)">
-            <summary>
-            Adds an object to a list, only if the list does not contain the object allready.
-            </summary>
-            <typeparam name="T">The type of the objects in the list.</typeparam>
-            <param name="list">The list.</param>
-            <param name="obj">The object which should be added to the list.</param>
-            <returns>True if the object was added to the list, else false.</returns>
-        </member>
-        <member name="T:jjm.one.MiscUtilFunctions.InvokeHelper">
-            <summary>
-            A partial class containing multiple helper functions for invoking functions.
-            </summary>
-            <summary>
-            A partial class containing multiple helper functions for invoking functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.HasFct(System.Type,System.String)">
-            <summary>
-            Check if a specific type of object has a specific member function.
-            </summary>
-            <param name="type">The specific type to check.</param>
-            <param name="fctName">The specific function name.</param>
-            <returns>True on success, esle false.</returns>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.HasFct(System.Object,System.String)">
-            <summary>
-            Check if a specific object has a specific member function.
-            </summary>
-            <param name="obj">The specific object to check.</param>
-            <param name="fctName"></param>
-            <returns>True on success, esle false.</returns>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.InvokeFct``2(``0,System.String,System.Object[]@)">
-            <summary>
-            Invoke a  non void function on an object.
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-            <param name="paramList">The function parmeters as an object array.</param>
-            <returns>The result of the invoked function.</returns>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.InvokeFct``2(``0,System.String)">
-            <summary>
-            Invoke a  non void function on an object.
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-            <returns>The result of the invoked function.</returns>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.ThisInvokeFct``2(``0,System.String,System.Object[]@)">
-            <summary>
-            Invoke a  non void function on an object (as extension).
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-            <param name="paramList">The function parmeters as an object array.</param>
-            <returns>The result of the invoked function.</returns>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.ThisInvokeFct``2(``0,System.String)">
-            <summary>
-            Invoke a  non void function on an object (as extension).
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-            <returns>The result of the invoked function.</returns>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.InvokeFct``1(``0,System.String,System.Object[]@)">
-            <summary>
-            Invoke a  non void function on an object.
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-            <param name="paramList">The function parmeters as an object array.</param>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.InvokeFct``1(``0,System.String)">
-            <summary>
-            Invoke a  non void function on an object.
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.ThisInvokeFct``1(``0,System.String,System.Object[]@)">
-            <summary>
-            Invoke a  void function on an object (as extension).
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-            <param name="paramList">The function parmeters as an object array.</param>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.InvokeHelper.ThisInvokeFct``1(``0,System.String)">
-            <summary>
-            Invoke a  void function on an object (as extension).
-            </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <param name="instance">The instance if the object.</param>
-            <param name="fctName">The name of the function.</param>
-        </member>
-        <member name="T:jjm.one.MiscUtilFunctions.CastHelper">
-            <summary>
-            A partial class containing multiple helper functions for casting objects.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.CastHelper.TryCast``2(``0,``1@)">
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)">
             <summary>
             Try to cast an object into an object of a specific type.
             </summary>
@@ -132,6 +19,127 @@
             <param name="input">The object to cast.</param>
             <param name="output">The result of the cast.</param>
             <returns>True on success, else false.</returns>
+        </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt">
+            <summary>
+            A partial class containing multiple helper functions for invoking
+            functions and methods.
+            </summary>
+            <summary>
+            A partial class containing multiple helper functions for invoking functions.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Type,System.String)">
+            <summary>
+            Check if a specific type of object has a specific method.
+            </summary>
+            <param name="type">The specific type to check.</param>
+            <param name="methodName">The specific method name.</param>
+            <returns>True on success, else false.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Object,System.String)">
+            <summary>
+            Check if a specific object has a specific method.
+            </summary>
+            <param name="obj">The specific object to check.</param>
+            <param name="methodName">The specific method name.</param>
+            <returns>True on success, else false.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``2(``0,System.String,System.Object[]@)">
+            <summary>
+            Invoke a  non void method on an object (as extension).
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="Tout">The return type.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+            <param name="paramList">The method parmeters as an object array.</param>
+            <returns>The result of the invoked method.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``2(``0,System.String)">
+            <summary>
+            Invoke a  non void method on an object (as extension).
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="Tout">The return type.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+            <returns>The result of the invoked method.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``1(``0,System.String,System.Object[]@)">
+            <summary>
+            Invoke a  void method on an object (as extension).
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+            <param name="paramList">The method parmeters as an object array.</param>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``1(``0,System.String)">
+            <summary>
+            Invoke a  void method on an object (as extension).
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+        </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt">
+            <summary>
+            A partial class containing multiple helper functions for <see cref="T:System.Collections.Generic.List`1"/>.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.List{``0},``0)">
+            <summary>
+            Adds an object to a list, only if the list does not contain the object allready.
+            </summary>
+            <typeparam name="T">The type of the objects in the list.</typeparam>
+            <param name="list">The list.</param>
+            <param name="obj">The object which should be added to the list.</param>
+            <returns>True if the object was added to the list, else false.</returns>
+        </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt">
+            <summary>
+            A partial class containing multiple helper functions for invoking
+            functions and methods.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``2(``0,System.String,System.Object[]@)">
+            <summary>
+            Invoke a  non void method on an object.
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="Tout">The return type.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+            <param name="paramList">The method parmeters as an object array.</param>
+            <returns>The result of the invoked method.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``2(``0,System.String)">
+            <summary>
+            Invoke a  non void method on an object.
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="Tout">The return type.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+            <returns>The result of the invoked method.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``1(``0,System.String,System.Object[]@)">
+            <summary>
+            Invoke a  non void method on an object.
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
+            <param name="paramList">The method parmeters as an object array.</param>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``1(``0,System.String)">
+            <summary>
+            Invoke a  non void method on an object.
+            </summary>
+            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <param name="instance">The instance if the object.</param>
+            <param name="methodName">The name of the method.</param>
         </member>
     </members>
 </doc>

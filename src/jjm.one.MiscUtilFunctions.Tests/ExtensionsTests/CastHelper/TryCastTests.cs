@@ -1,4 +1,6 @@
-﻿namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
+﻿using jjm.one.MiscUtilFunctions.Extensions.CastHelper;
+
+namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
 {
 	public class TryCastTests
 	{

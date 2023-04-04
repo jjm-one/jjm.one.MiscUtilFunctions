@@ -1,4 +1,5 @@
-﻿using System;
+﻿using jjm.one.MiscUtilFunctions.Extensions.InvokeHelper;
+using System;
 
 namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
 {
@@ -55,13 +56,13 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
         public void InvokeMethodTest0()
         {
             Assert.Throws<System.Reflection.TargetInvocationException>(new Action(() =>
-                _instanceOfA.ThisInvokeFct<A>(nameof(_instanceOfA.M0))));
+                _instanceOfA.InvokeMethod<A>(nameof(_instanceOfA.M0))));
         }
 
         [Fact]
         public void InvokeMethodTest1()
         {
-            Assert.Equal(42, _instanceOfA.ThisInvokeFct<A,int>(
+            Assert.Equal(42, _instanceOfA.InvokeMethod<A,int>(
                 nameof(_instanceOfA.M1)));
         }
 
@@ -69,7 +70,7 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
         public void InvokeMethodTest2()
         {
             var p = new object?[] { 42 };
-            Assert.Equal(42, _instanceOfA.ThisInvokeFct<A, int>(
+            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
                 nameof(_instanceOfA.M2), ref p));
         }
 
@@ -77,11 +78,11 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
         public void InvokeMethodTest3()
         {
             var p1 = new object?[] { 40, 2 };
-            Assert.Equal(42, _instanceOfA.ThisInvokeFct<A, int>(
+            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
                 nameof(_instanceOfA.M3), ref p1));
 
             var p2 = new object?[] { 42, true };
-            Assert.Equal(42, _instanceOfA.ThisInvokeFct<A, int>(
+            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
                 nameof(_instanceOfA.M3), ref p2));
         }
 
@@ -89,10 +90,10 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
         public void InvokeMethodTest5()
         {
             var p = new object?[] { 42 };
-            Assert.Equal(0, _instanceOfA.ThisInvokeFct<A, int>(
+            Assert.Equal(0, _instanceOfA.InvokeMethod<A, int>(
                 nameof(_instanceOfA.M1), ref p));
 
-            Assert.Equal(0, _instanceOfA.ThisInvokeFct<A, int>("SomeNotExistingFunction"));
+            Assert.Equal(0, _instanceOfA.InvokeMethod<A, int>("SomeNotExistingFunction"));
         }
     }
 }

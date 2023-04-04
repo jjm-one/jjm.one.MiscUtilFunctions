@@ -37,9 +37,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="StaticFunctionsTests\" />
+    <None Remove="ExtensionsTests\" />
+    <None Remove="FunctionsTests\" />
+    <None Remove="ExtensionsTests\ListHelper\" />
+    <None Remove="ExtensionsTests\InvokeHelper\" />
+    <None Remove="ExtensionsTests\CastHelper\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\jjm.one.MiscUtilFunctions\jjm.one.MiscUtilFunctions.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExtensionsTests\" />
+    <Folder Include="FunctionsTests\" />
+    <Folder Include="ExtensionsTests\ListHelper\" />
+    <Folder Include="ExtensionsTests\InvokeHelper\" />
+    <Folder Include="ExtensionsTests\CastHelper\" />
   </ItemGroup>
 </Project>
