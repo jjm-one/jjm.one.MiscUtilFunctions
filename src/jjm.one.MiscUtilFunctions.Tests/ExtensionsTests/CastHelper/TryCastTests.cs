@@ -1,15 +1,21 @@
 ﻿using jjm.one.MiscUtilFunctions.Extensions.CastHelper;
 
-namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
+namespace jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper
 {
+    /// <summary>
+    /// This class contains unit test for the CastHelper functions.
+    /// </summary>
 	public class TryCastTests
 	{
+		/// <summary>
+		/// Test <see cref="CastHelperExt.TryCast{T1,T2}"/> boot to int (successful) 1 .
+		/// </summary>
 		[Fact]
 		public void TryCastBoolInt1()
         {
-			bool input = true;
+			const bool input = true;
 
-            bool resState = input.TryCast(out int resVal);
+            var resState = input.TryCast(out int resVal);
 
             Assert.True(input);
 
@@ -17,12 +23,15 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
 			Assert.True(resState);
 		}
 
+        /// <summary>
+        /// Test <see cref="CastHelperExt.TryCast{T1,T2}"/> boot to int (successful) 2.
+        /// </summary>
         [Fact]
         public void TryCastBoolInt2()
         {
-            bool input = false;
+            const bool input = false;
 
-            bool resState = input.TryCast(out int resVal);
+            var resState = input.TryCast(out int resVal);
 
             Assert.False(input);
 
@@ -31,12 +40,15 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
         }
 
 
+        /// <summary>
+        /// Test <see cref="CastHelperExt.TryCast{T1,T2}"/> int to bool (successful) 1.
+        /// </summary>
         [Fact]
         public void TryCastIntBool1()
         {
-            int input = 1;
+            const int input = 1;
 
-            bool resState = input.TryCast(out bool resVal);
+            var resState = input.TryCast(out bool resVal);
 
             Assert.Equal(1, input);
 
@@ -44,12 +56,15 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
             Assert.True(resState);
         }
 
+        /// <summary>
+        /// Test <see cref="CastHelperExt.TryCast{T1,T2}"/> int to bool (successful) 2.
+        /// </summary>
         [Fact]
         public void TryCastIntBool2()
         {
-            int input = 0;
+            const int input = 0;
 
-            bool resState = input.TryCast(out bool resVal);
+            var resState = input.TryCast(out bool resVal);
 
             Assert.Equal(0, input);
 
@@ -57,12 +72,15 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
             Assert.True(resState);
         }
 
+        /// <summary>
+        /// Test <see cref="CastHelperExt.TryCast{T1,T2}"/> int to bool (successful) 3.
+        /// </summary>
         [Fact]
         public void TryCastIntBool3()
         {
-            int input = 2;
+            const int input = 2;
 
-            bool resState = input.TryCast(out bool resVal);
+            var resState = input.TryCast(out bool resVal);
 
             Assert.Equal(2, input);
 
@@ -70,12 +88,15 @@ namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
             Assert.True(resState);
         }
 
+        /// <summary>
+        /// Test <see cref="CastHelperExt.TryCast{T1,T2}"/> string to int (successful) 1.
+        /// </summary>
         [Fact]
-        public void TryCastStringInt()
+        public void TryCastStringInt1()
         {
-            string input = "1234";
+            const string input = "1234";
 
-            bool resState = input.TryCast(out int resVal);
+            var resState = input.TryCast(out int resVal);
 
             Assert.Equal("1234", input);
 

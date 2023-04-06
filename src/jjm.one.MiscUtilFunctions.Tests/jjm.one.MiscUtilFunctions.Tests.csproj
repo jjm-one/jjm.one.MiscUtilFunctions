@@ -4,7 +4,7 @@
 	<TargetFramework>net7.0</TargetFramework>
 	<ImplicitUsings>disable</ImplicitUsings>
 	<Nullable>enable</Nullable>
-	<Version>1.0.0-alpha.3</Version>
+	<Version>1.0.0-alpha.4</Version>
 	<Authors>Jonas Merkle [JJM] </Authors>
 	<Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
 	<RootNamespace>jjm.one.MiscUtilFunctions.Tests</RootNamespace>
@@ -23,7 +23,7 @@
     <DocumentationFile>./jjm.one.MiscUtilFunctions.Tests.xml</DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
+	<ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.5.0" />
     <PackageReference Include="xunit" Version="2.4.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5">
@@ -48,7 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExtensionsTests\" />
-    <Folder Include="FunctionsTests\" />
     <Folder Include="ExtensionsTests\ListHelper\" />
     <Folder Include="ExtensionsTests\InvokeHelper\" />
     <Folder Include="ExtensionsTests\CastHelper\" />

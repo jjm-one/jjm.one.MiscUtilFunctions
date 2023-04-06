@@ -8,7 +8,7 @@ namespace jjm.one.MiscUtilFunctions.Extensions.ListHelper
     public static partial class ListHelperExt
     {
         /// <summary>
-        /// Adds an object to a list, only if the list does not contain the object allready.
+        /// Adds an object to a list, only if the list does not contain the object already.
         /// </summary>
         /// <typeparam name="T">The type of the objects in the list.</typeparam>
         /// <param name="list">The list.</param>
@@ -16,15 +16,14 @@ namespace jjm.one.MiscUtilFunctions.Extensions.ListHelper
         /// <returns>True if the object was added to the list, else false.</returns>
         public static bool AddUnique<T>(this List<T> list, T obj)
         {
-            if (!list.Contains(obj))
-            {
-                list.Add(obj);
-                return true;
-            }
-            else
+            if (list.Contains(obj))
             {
                 return false;
             }
+
+            list.Add(obj);
+            return true;
+
         }
     }
 }
