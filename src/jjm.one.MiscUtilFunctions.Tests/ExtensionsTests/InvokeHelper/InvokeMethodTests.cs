@@ -1,7 +1,7 @@
-﻿using jjm.one.MiscUtilFunctions.Extensions.InvokeHelper;
-using System;
+﻿using System;
+using jjm.one.MiscUtilFunctions.Extensions.InvokeHelper;
 
-namespace jjm.one.MiscUtilFunctions.Tests.StaticFunctionsTests
+namespace jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper
 {
     public class InvokeMethodTests
     {

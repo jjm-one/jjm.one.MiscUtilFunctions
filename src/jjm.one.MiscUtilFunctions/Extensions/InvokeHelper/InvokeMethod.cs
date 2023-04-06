@@ -13,31 +13,31 @@ namespace jjm.one.MiscUtilFunctions.Extensions.InvokeHelper
         /// <summary>
         /// Invoke a  non void method on an object (as extension).
         /// </summary>
-        /// <typeparam name="Tinstance">The type of the object.</typeparam>
-        /// <typeparam name="Tout">The return type.</typeparam>
+        /// <typeparam name="TInstance">The type of the object.</typeparam>
+        /// <typeparam name="TOut">The return type.</typeparam>
         /// <param name="instance">The instance if the object.</param>
         /// <param name="methodName">The name of the method.</param>
-        /// <param name="paramList">The method parmeters as an object array.</param>
+        /// <param name="paramList">The method parameters as an object array.</param>
         /// <returns>The result of the invoked method.</returns>
-        public static Tout? InvokeMethod<Tinstance, Tout>(this Tinstance instance,
+        public static TOut? InvokeMethod<TInstance, TOut>(this TInstance instance,
 			string methodName, ref object?[]? paramList)
 		{
-            return InvokeHelperFkt.InvokeMethod<Tinstance, Tout>(instance, methodName, ref paramList);
+            return InvokeHelperFkt.InvokeMethod<TInstance, TOut>(instance, methodName, ref paramList);
         }
 
         /// <summary>
         /// Invoke a  non void method on an object (as extension).
         /// </summary>
-        /// <typeparam name="Tinstance">The type of the object.</typeparam>
-        /// <typeparam name="Tout">The return type.</typeparam>
+        /// <typeparam name="TInstance">The type of the object.</typeparam>
+        /// <typeparam name="TOut">The return type.</typeparam>
         /// <param name="instance">The instance if the object.</param>
         /// <param name="methodName">The name of the method.</param>
         /// <returns>The result of the invoked method.</returns>
-        public static Tout? InvokeMethod<Tinstance, Tout>(this Tinstance instance,
+        public static TOut? InvokeMethod<TInstance, TOut>(this TInstance instance,
             string methodName)
         {
             var param = Array.Empty<object?>();
-            return InvokeHelperFkt.InvokeMethod<Tinstance, Tout>(instance, methodName, ref param);
+            return InvokeHelperFkt.InvokeMethod<TInstance, TOut>(instance, methodName, ref param);
         }
 
         #endregion
@@ -47,11 +47,11 @@ namespace jjm.one.MiscUtilFunctions.Extensions.InvokeHelper
         /// <summary>
         /// Invoke a  void method on an object (as extension).
         /// </summary>
-        /// <typeparam name="Tinstance">The type of the object.</typeparam>
+        /// <typeparam name="TInstance">The type of the object.</typeparam>
         /// <param name="instance">The instance if the object.</param>
         /// <param name="methodName">The name of the method.</param>
-        /// <param name="paramList">The method parmeters as an object array.</param>
-        public static void InvokeMethod<Tinstance>(this Tinstance instance,
+        /// <param name="paramList">The method parameters as an object array.</param>
+        public static void InvokeMethod<TInstance>(this TInstance instance,
             string methodName, ref object?[]? paramList)
         {
             InvokeHelperFkt.InvokeMethod(instance, methodName, ref paramList);
@@ -60,10 +60,10 @@ namespace jjm.one.MiscUtilFunctions.Extensions.InvokeHelper
         /// <summary>
         /// Invoke a  void method on an object (as extension).
         /// </summary>
-        /// <typeparam name="Tinstance">The type of the object.</typeparam>
+        /// <typeparam name="TInstance">The type of the object.</typeparam>
         /// <param name="instance">The instance if the object.</param>
         /// <param name="methodName">The name of the method.</param>
-        public static void InvokeMethod<Tinstance>(this Tinstance instance,
+        public static void InvokeMethod<TInstance>(this TInstance instance,
             string methodName)
         {
             var param = Array.Empty<object?>();

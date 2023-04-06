@@ -14,8 +14,8 @@
             <summary>
             Try to cast an object into an object of a specific type.
             </summary>
-            <typeparam name="Tin">The type of the input object.</typeparam>
-            <typeparam name="Tout">The type to cast to.</typeparam>
+            <typeparam name="TIn">The type of the input object.</typeparam>
+            <typeparam name="TOut">The type to cast to.</typeparam>
             <param name="input">The object to cast.</param>
             <param name="output">The result of the cast.</param>
             <returns>True on success, else false.</returns>
@@ -49,19 +49,19 @@
             <summary>
             Invoke a  non void method on an object (as extension).
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
+            <typeparam name="TOut">The return type.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
-            <param name="paramList">The method parmeters as an object array.</param>
+            <param name="paramList">The method parameters as an object array.</param>
             <returns>The result of the invoked method.</returns>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``2(``0,System.String)">
             <summary>
             Invoke a  non void method on an object (as extension).
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
+            <typeparam name="TOut">The return type.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
             <returns>The result of the invoked method.</returns>
@@ -70,16 +70,16 @@
             <summary>
             Invoke a  void method on an object (as extension).
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
-            <param name="paramList">The method parmeters as an object array.</param>
+            <param name="paramList">The method parameters as an object array.</param>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``1(``0,System.String)">
             <summary>
             Invoke a  void method on an object (as extension).
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
         </member>
@@ -90,7 +90,7 @@
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.List{``0},``0)">
             <summary>
-            Adds an object to a list, only if the list does not contain the object allready.
+            Adds an object to a list, only if the list does not contain the object already.
             </summary>
             <typeparam name="T">The type of the objects in the list.</typeparam>
             <param name="list">The list.</param>
@@ -107,19 +107,19 @@
             <summary>
             Invoke a  non void method on an object.
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
+            <typeparam name="TOut">The return type.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
-            <param name="paramList">The method parmeters as an object array.</param>
+            <param name="paramList">The method parameters as an object array.</param>
             <returns>The result of the invoked method.</returns>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``2(``0,System.String)">
             <summary>
             Invoke a  non void method on an object.
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
-            <typeparam name="Tout">The return type.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
+            <typeparam name="TOut">The return type.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
             <returns>The result of the invoked method.</returns>
@@ -128,16 +128,16 @@
             <summary>
             Invoke a  non void method on an object.
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
-            <param name="paramList">The method parmeters as an object array.</param>
+            <param name="paramList">The method parameters as an object array.</param>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``1(``0,System.String)">
             <summary>
             Invoke a  non void method on an object.
             </summary>
-            <typeparam name="Tinstance">The type of the object.</typeparam>
+            <typeparam name="TInstance">The type of the object.</typeparam>
             <param name="instance">The instance if the object.</param>
             <param name="methodName">The name of the method.</param>
         </member>
