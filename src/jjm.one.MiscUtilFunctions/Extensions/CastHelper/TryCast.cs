@@ -17,8 +17,7 @@ namespace jjm.one.MiscUtilFunctions.Extensions.CastHelper
         /// <param name="input">The object to cast.</param>
         /// <param name="output">The result of the cast.</param>
         /// <returns>True on success, else false.</returns>
-        public static bool TryCast<Tin, Tout>(this Tin input, out Tout? output)
-            where Tout : new()
+        public static bool TryCast<TIn, TOut>(this TIn input, out TOut? output)
         {
             output = default;
 
