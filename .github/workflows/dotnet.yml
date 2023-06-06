@@ -149,6 +149,7 @@ jobs:
     name: Publish Documentation
     needs: [build-and-test-debug]
     runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
     steps:
     - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
       with:
