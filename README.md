@@ -14,8 +14,13 @@ A collection of miscellaneous utility and helper functions for C# projects.
 - [jjm.one.MiscUtilFunctions](#jjmonemiscutilfunctions)
   - [Status](#status)
   - [Table of contents](#table-of-contents)
+  - [Nuget Package](#nuget-package)
   - [Full Documentation](#full-documentation)
   - [Repo](#repo)
+
+## Nuget Package
+
+You can get the latest version of this software as a nuget package form [nuget.org](https://www.nuget.org/packages/jjm.one.MiscUtilFunctions/)
 
 ## Full Documentation
 
