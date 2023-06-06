@@ -15,7 +15,12 @@ A collection of miscellaneous utility and helper functions for C# projects.
   - [Status](#status)
   - [Table of contents](#table-of-contents)
   - [Full Documentation](#full-documentation)
+  - [Repo](#repo)
 
 ## Full Documentation
 
 The full documentation for this package can be found [here](https://jjm-one.github.io/jjm.one.MiscUtilFunctions/main/doc/html/index.html).
+
+## Repo
+
+The associated repo for this package can be found [here](https://github.com/jjm-one/jjm.one.MiscUtilFunctions).
