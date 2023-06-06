@@ -145,15 +145,16 @@ jobs:
   #    #env:
   #    #  NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
 
-  #publish-doc:
-  #  name: Publish Documentation
-  #  needs: [build-and-test-debug]
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - uses: actions/checkout@v3
-  #    - name: Deploy documentation
-  #      run: echo "Deploy documentation"
-  
-  
-
-  
+  publish-doc:
+    name: Publish Documentation
+    needs: [build-and-test-debug]
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    steps:
+    - uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-pages
+        folder: doc/html
+        config_file: Doxyfile
+        target_folder: ${{ github.ref_name }}/doc/html
