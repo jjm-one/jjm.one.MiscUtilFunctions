@@ -7,11 +7,11 @@
     <Version>1.0.0-alpha.6</Version>
     <Authors>Jonas Merkle [JJM] </Authors>
     <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
-	<RootNamespace>jjm.one.MiscUtilFunctions</RootNamespace>
+	  <RootNamespace>jjm.one.MiscUtilFunctions</RootNamespace>
     <PackageId>jjm.one.MiscUtilFunctions</PackageId>
     <Title>jjm.one.MiscUtilFunctions</Title>
     <Description>A collection of miscellaneous utility and helper functions for C# projects.</Description>
-	<PackageTags>utility, helper, function, csharp</PackageTags>
+	  <PackageTags>utility, helper, function, csharp</PackageTags>
     <PackageProjectUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions.git</RepositoryUrl>
