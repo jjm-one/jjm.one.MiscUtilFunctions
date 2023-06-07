@@ -39,6 +39,66 @@
             Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> string to int (successful) 1.
             </summary>
         </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests">
+            <summary>
+            This class contains unit-tests for the "HasMethod" functions.
+            </summary>
+        </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.A">
+            <summary>
+            This is a private util class for the "InvokeMethod" tests.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethodTest1">
+            <summary>
+            1. test for the "HasMethod" functions.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethodTest2">
+            <summary>
+            2. test for the "HasMethod" functions.
+            </summary>
+        </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests">
+            <summary>
+            This class contains unit-tests for the "InvokeMethod" functions.
+            </summary>
+        </member>
+        <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.A">
+            <summary>
+            This is a private util class for the "InvokeMethod" tests.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.#ctor">
+            <summary>
+            Default constructor for the <see cref="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests"/> class.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest0">
+            <summary>
+            1. test for the "InvokeMethod" functions.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest1">
+            <summary>
+            2. test for the "InvokeMethod" functions.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest2">
+            <summary>
+            3. test for the "InvokeMethod" functions.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest3">
+            <summary>
+            4. test for the "InvokeMethod" functions.
+            </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest5">
+            <summary>
+            5. test for the "InvokeMethod" functions.
+            </summary>
+        </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests">
             <summary>
             Unit-Tests for the AddUnique functions.
