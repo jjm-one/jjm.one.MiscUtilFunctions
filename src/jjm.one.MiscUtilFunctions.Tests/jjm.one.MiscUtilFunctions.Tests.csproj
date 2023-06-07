@@ -10,7 +10,7 @@
     <RootNamespace>jjm.one.MiscUtilFunctions.Tests</RootNamespace>
     <Title>jjm.one.MiscUtilFunctions.Tests</Title>
     <Description>A collection of miscellaneous utility and helper functions for C# projects. (Unit-Tests)</Description>
-	<PackageTags>utility, helper, function, csharp, tests</PackageTags>
+	  <PackageTags>utility, helper, function, csharp, tests</PackageTags>
     <PackageProjectUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions.git</RepositoryUrl>
