@@ -6,6 +6,7 @@ A collection of miscellaneous utility and helper functions for C# projects.
 
 |                       |                       |
 |----------------------:|-----------------------|
+| Build & Test Status (main) | [![Build&Test](https://github.com/jjm-one/jjm.one.MiscUtilFunctions/actions/workflows/dotnet.yml/badge.svg)](https://github.com/jjm-one/jjm.one.MiscUtilFunctions/actions/workflows/dotnet.yml) |
 | Nuget Package Version | [![Nuget Version](https://img.shields.io/nuget/v/jjm.one.MiscUtilFunctions?style=flat-square)](https://www.nuget.org/packages/jjm.one.MiscUtilFunctions/) |
 | SonarCloudQuality Gate Status | [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jjm-one_jjm.one.MiscUtilFunctions&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jjm-one_jjm.one.MiscUtilFunctions) |
 
