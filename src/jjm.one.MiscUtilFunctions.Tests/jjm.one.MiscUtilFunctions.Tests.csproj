@@ -4,7 +4,7 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.0-alpha.7</Version>
+    <Version>1.0.0-alpha.8</Version>
     <Authors>Jonas Merkle [JJM] </Authors>
     <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
     <RootNamespace>jjm.one.MiscUtilFunctions.Tests</RootNamespace>
@@ -30,7 +30,7 @@
   </PropertyGroup>
 
 	<ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1" />
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
