@@ -6,7 +6,7 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
     /// A partial class containing multiple helper functions for invoking
     /// functions and methods.
     /// </summary>
-	public static partial class InvokeHelperFkt
+	public static class InvokeHelperFkt
 	{
         #region non void function to invoke
 

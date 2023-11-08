@@ -5,7 +5,7 @@ namespace jjm.one.MiscUtilFunctions.Extensions.ListHelper
     /// <summary>
     /// A partial class containing multiple helper functions for <see cref="List{T}"/>.
     /// </summary>
-    public static partial class ListHelperExt
+    public static class ListHelperExt
     {
         /// <summary>
         /// Adds an object to a list, only if the list does not contain the object already.

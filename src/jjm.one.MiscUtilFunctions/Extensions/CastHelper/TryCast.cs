@@ -7,7 +7,7 @@ namespace jjm.one.MiscUtilFunctions.Extensions.CastHelper
     /// A partial class containing multiple helper functions for casting
     /// objects.
     /// </summary>
-    public static partial class CastHelperExt
+    public static class CastHelperExt
     {
         /// <summary>
         /// Try to cast an object into an object of a specific type.
