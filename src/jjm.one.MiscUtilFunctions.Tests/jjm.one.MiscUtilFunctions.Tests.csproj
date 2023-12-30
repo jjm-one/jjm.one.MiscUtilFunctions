@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.0-alpha.9</Version>
+    <Version>1.0.0-alpha.10</Version>
     <Authors>Jonas Merkle [JJM] </Authors>
-    <Copyright>© by Jonas Merkle [JJM], 2023.</Copyright>
+    <Copyright>© by Jonas Merkle [JJM], 2024.</Copyright>
     <RootNamespace>jjm.one.MiscUtilFunctions.Tests</RootNamespace>
     <Title>jjm.one.MiscUtilFunctions.Tests</Title>
     <Description>A collection of miscellaneous utility and helper functions for C# projects. (Unit-Tests)</Description>
@@ -31,8 +31,8 @@
 
 	<ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="xunit" Version="2.6.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.5">
+    <PackageReference Include="xunit" Version="2.6.4" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.5.6">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
