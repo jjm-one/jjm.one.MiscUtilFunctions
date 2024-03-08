@@ -4,7 +4,7 @@
     <TargetFrameworks>net7.0;netstandard2.0;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.0-alpha.10</Version>
+    <Version>2.0.0-alpha.0</Version>
     <Authors>Jonas Merkle [JJM] </Authors>
     <Copyright>© by Jonas Merkle [JJM], 2024.</Copyright>
 	  <RootNamespace>jjm.one.MiscUtilFunctions</RootNamespace>
@@ -16,7 +16,7 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions.git</RepositoryUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile>COPYING.LESSER.txt</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <SignAssembly>True</SignAssembly>
@@ -33,9 +33,13 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <None Include="..\..\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+    <None Include="..\..\COPYING.txt">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\COPYING.LESSER.txt">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
     </None>
     <None Include="..\..\README.md">
       <Pack>True</Pack>
