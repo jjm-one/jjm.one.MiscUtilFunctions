@@ -6,31 +6,218 @@
     <members>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests">
             <summary>
-            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/>.
+            Unit tests for <see cref="T:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt"/>.
             </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_BoolTrue_ToInt_Returns1">
+            <summary>Casting <c>true</c> to <c>int</c> yields 1.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_BoolFalse_ToInt_Returns0">
+            <summary>Casting <c>false</c> to <c>int</c> yields 0.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_Int_ToBool_ReturnsExpected(System.Int32,System.Boolean)">
+            <summary>Casting various integers to <c>bool</c> yields the expected result.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_SameType_String_Succeeds">
+            <summary>Casting a string to the same string type succeeds.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_SameType_Int_Succeeds">
+            <summary>Casting an int to the same int type succeeds.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_ValidStringInt_Succeeds(System.String,System.Int32)">
+            <summary>Valid numeric strings are parsed to <c>int</c> via TryParse.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_ValidStringBool_Succeeds(System.String,System.Boolean)">
+            <summary>Valid boolean strings are parsed to <c>bool</c> via TryParse.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_ValidStringDouble_Succeeds(System.String)">
+            <summary>Valid floating-point strings are parsed to <c>double</c> via TryParse.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_InvalidStringToInt_ReturnsFalse">
+            <summary>A non-numeric string cast to <c>int</c> returns false.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_InvalidStringToBool_ReturnsFalse">
+            <summary>A non-boolean string cast to <c>bool</c> returns false.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_ObjectToInt_Incompatible_ReturnsFalse">
+            <summary>An incompatible object cast to <c>int</c> returns false.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_IntToNullableInt_Succeeds">
+            <summary>Casting an int to <c>int?</c> succeeds.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_StringToNullableInt_Succeeds">
+            <summary>Casting a numeric string to <c>int?</c> succeeds.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_IntToDouble_Succeeds">
+            <summary>Casting <c>int</c> to <c>double</c> succeeds via Convert.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCast_IntToLong_Succeeds">
+            <summary>Casting <c>int</c> to <c>long</c> succeeds via Convert.</summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests">
             <summary>
-            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Type,System.String)"/>
-            and <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Object,System.String)"/>.
+            Unit tests for <see cref="T:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt"/>.
             </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnType_ExistingMethod_ReturnsTrue">
+            <summary>HasMethod returns true for an existing method on a type.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnType_NonExistingMethod_ReturnsFalse">
+            <summary>HasMethod returns false for a method that does not exist on the type.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnType_NullName_ReturnsFalse">
+            <summary>HasMethod returns false when the method name is null.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnType_EmptyName_ReturnsFalse">
+            <summary>HasMethod returns false when the method name is an empty string.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnType_InheritedMethod_ReturnsTrue">
+            <summary>HasMethod returns true for methods inherited from <see cref="T:System.Object"/>.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnType_AmbiguousOverloads_ReturnsTrue">
+            <summary>HasMethod returns true when multiple overloads share the same name (AmbiguousMatchException path).</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnObject_ExistingMethod_ReturnsTrue">
+            <summary>HasMethod returns true for an existing method called on an object instance.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnObject_NonExistingMethod_ReturnsFalse">
+            <summary>HasMethod returns false for a non-existing method called on an object instance.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnObject_NullName_ReturnsFalse">
+            <summary>HasMethod returns false when the method name is null on an object instance.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethod_OnNullObject_ReturnsFalse">
+            <summary>HasMethod returns false and does not throw when called on a null object.</summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests">
             <summary>
-            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``2(``0,System.String,System.Object[]@)"/>
-            and <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``1(``0,System.String,System.Object[]@)"/>.
+            Unit tests for the <see cref="T:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt"/> InvokeMethod extension overloads.
             </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.#ctor">
+            <summary>Initialises the shared <see cref="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.A"/> instance used across tests.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_VoidThrows_PropagatesAsTargetInvocationException">
+            <summary>A void method that throws propagates the exception as <see cref="T:System.Reflection.TargetInvocationException"/>.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_VoidNoParam_Succeeds">
+            <summary>A no-parameter void method executes without throwing.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_VoidWithParam_Succeeds">
+            <summary>Invoking a void method by a non-existent name is a no-op.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_NoParams_ReturnsCorrectValue">
+            <summary>A parameterless method returns its expected value.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_SingleParam_ReturnsEchoedValue">
+            <summary>A single-param method echoes the supplied argument.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_TwoIntParams_ReturnsSum">
+            <summary>A two-param method returns the sum of its arguments.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_OverloadedMethod_IntBool_ReturnsPositive">
+            <summary>The overload resolution picks the (int, bool) overload and returns a positive value when <c>b=true</c>.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_OverloadedMethod_IntBool_ReturnsNegative">
+            <summary>The overload resolution picks the (int, bool) overload and returns a negative value when <c>b=false</c>.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_WrongParamCount_ReturnsDefault">
+            <summary>Passing the wrong number of parameters returns default.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_NonExistingMethod_ReturnsDefault">
+            <summary>Invoking a non-existing method name returns default.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_WrongReturnType_ReturnsDefault">
+            <summary>Requesting a return type that does not match the method signature returns default.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_NullInstance_StaticMethod_ReturnsValue">
+            <summary>A null instance falls back to the declared type and can invoke static methods.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_PolymorphicInstance_UsesRuntimeType">
+            <summary>An interface-typed instance dispatches to its runtime type's implementation.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethod_InstanceMethod_WithParam_ReturnsCorrectValue">
+            <summary>An instance method with one parameter returns the correct value.</summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests">
             <summary>
-            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.IList{``0},``0)"/>.
+            Unit tests for the <see cref="T:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt"/> AddUnique overloads.
             </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_NewItem_AddsAndReturnsTrue">
+            <summary>Adding an item not yet in the list succeeds and returns true.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_DuplicateItem_DoesNotAddReturnsFalse">
+            <summary>Adding a duplicate item does not change the list and returns false.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_EmptyList_AlwaysAdds">
+            <summary>An empty list always accepts the first item.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_MultipleUniqueItems_AllAdded">
+            <summary>Multiple distinct items are all added successfully.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_NullItem_TreatedAsValue">
+            <summary>A null item is treated as a regular value: duplicate nulls are rejected, a first null is accepted.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_IntList_ReturnsExpected(System.Int32,System.Boolean)">
+            <summary>Integer list correctly accepts new values and rejects duplicates.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_IList_WorksThroughInterface">
+            <summary>AddUnique works when the list is typed as <see cref="T:System.Collections.Generic.IList`1"/>.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_WithComparer_CaseInsensitive_DetectsDuplicate">
+            <summary>Case-insensitive comparer treats differently-cased strings as duplicates.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.AddUnique_WithComparer_CaseSensitive_AddsDistinct">
+            <summary>Case-sensitive comparer treats differently-cased strings as distinct.</summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests">
             <summary>
             Unit tests for <see cref="T:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt"/> — the underlying static helper
             that the extension methods delegate to.
             </summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_StaticNoParam_ReturnsValue">
+            <summary>A parameterless static method returns its expected value.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_StaticTwoParams_ReturnsSum">
+            <summary>A static method with two parameters returns their sum.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_InstanceMethod_ReturnsCorrectValue">
+            <summary>An instance method with one parameter returns the correct computed value.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_NoParamShorthand_ReturnsValue">
+            <summary>The no-param shorthand overload also resolves the method correctly.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_NonMatchingReturnType_ReturnsDefault">
+            <summary>Requesting a return type that does not match any overload returns default.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_WrongParamCount_ReturnsDefault">
+            <summary>Passing fewer parameters than required returns default without throwing.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_NonExistingMethod_ReturnsDefault">
+            <summary>Invoking a non-existing method name returns default.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_DifferentReturnType_StringMethod_ReturnsValue">
+            <summary>A static method with a string return type returns the correctly formatted value.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_NullInstance_StaticMethod_ReturnsValue">
+            <summary>A null instance falls back to <c>typeof(TInstance)</c>, allowing static methods to be resolved.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_InterfaceTypedInstance_UsesRuntimeType">
+            <summary>An interface-typed instance dispatches via its runtime type, not the declared interface.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_Void_ThrowingMethod_PropagatesException">
+            <summary>A void method that throws propagates the exception as <see cref="T:System.Reflection.TargetInvocationException"/>.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_Void_NonExistingMethod_IsNoOp">
+            <summary>Invoking a void method by a non-existing name is a no-op.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_VoidShorthand_NonExistingMethod_IsNoOp">
+            <summary>The void shorthand overload with a non-existing name is also a no-op.</summary>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests.InvokeMethod_Void_NullInstance_StaticMethod_InvokesWithoutThrow">
+            <summary>A null instance can still invoke a static void method (which throws), confirming the static-fallback path.</summary>
         </member>
     </members>
 </doc>
