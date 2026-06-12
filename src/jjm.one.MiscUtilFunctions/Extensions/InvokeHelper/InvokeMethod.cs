@@ -7,7 +7,7 @@ namespace jjm.one.MiscUtilFunctions.Extensions.InvokeHelper
     /// A partial class containing multiple helper functions for invoking functions.
     /// </summary>
 	public static partial class InvokeHelperExt
-	{
+    {
         #region non void function to invoke
 
         /// <summary>
@@ -20,8 +20,8 @@ namespace jjm.one.MiscUtilFunctions.Extensions.InvokeHelper
         /// <param name="paramList">The method parameters as an object array.</param>
         /// <returns>The result of the invoked method.</returns>
         public static TOut? InvokeMethod<TInstance, TOut>(this TInstance instance,
-			string methodName, ref object?[]? paramList)
-		{
+            string methodName, ref object?[]? paramList)
+        {
             return InvokeHelperFkt.InvokeMethod<TInstance, TOut>(instance, methodName, ref paramList);
         }
 
