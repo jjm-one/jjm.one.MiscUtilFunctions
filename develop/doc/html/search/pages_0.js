@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jjm_20one_20miscutilfunctions_0',['jjm.one.MiscUtilFunctions',['../index.html',1,'']]]
+  ['jjm_2eone_2emiscutilfunctions_0',['jjm.one.MiscUtilFunctions',['../index.html',1,'']]]
 ];
