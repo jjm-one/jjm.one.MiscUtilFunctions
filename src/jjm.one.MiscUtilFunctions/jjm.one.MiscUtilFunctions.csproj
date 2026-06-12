@@ -1,27 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0;net10.0</TargetFrameworks>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <Version>2.0.0-alpha.0</Version>
-    <Authors>Jonas Merkle [JJM] </Authors>
-    <Copyright>© by Jonas Merkle [JJM], 2024.</Copyright>
-	  <RootNamespace>jjm.one.MiscUtilFunctions</RootNamespace>
-    <PackageId>jjm.one.MiscUtilFunctions</PackageId>
-    <Title>jjm.one.MiscUtilFunctions</Title>
+    <TargetFrameworks>$(DefaultNetCoreTargetFramework);$(AuxNetCoreTargetFramework)</TargetFrameworks>
+    <PackageId>$(_ProjectName)</PackageId>
+    <Title>$(_ProjectName)</Title>
+    <AssemblyName>$(_ProjectName)</AssemblyName>
+    <RootNamespace>$(_ProjectName)</RootNamespace>
     <Description>A collection of miscellaneous utility and helper functions for C# projects.</Description>
-	  <PackageTags>utility, helper, function, csharp</PackageTags>
-    <PackageProjectUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions</PackageProjectUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/jjm-one/jjm.one.MiscUtilFunctions.git</RepositoryUrl>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>utility, helper, function, csharp</PackageTags>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>jjm.one.MiscUtilFunctions.SignKey.snk</AssemblyOriginatorKeyFile>
-    <PackageIcon>jjm.one-logo_1024x1024.png</PackageIcon>
+    <AssemblyOriginatorKeyFile>..\..\jjm.one.MiscUtilFunctions.SignKey.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -33,18 +22,4 @@
     <DocumentationFile>./jjm.one.MiscUtilFunctions.xml</DocumentationFile>
   </PropertyGroup>
   
-  <ItemGroup>
-    <None Include="..\..\LICENSE">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\resources\logo\jjm.one-logo_1024x1024.png">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 </Project>
