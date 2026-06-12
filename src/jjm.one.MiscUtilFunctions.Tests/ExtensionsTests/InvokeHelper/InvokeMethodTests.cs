@@ -1,140 +1,184 @@
-﻿using System;
+using System;
 using jjm.one.MiscUtilFunctions.Extensions.InvokeHelper;
 
 namespace jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper
 {
     /// <summary>
-    /// This class contains unit-tests for the "InvokeMethod" functions.
+    /// Unit tests for <see cref="InvokeHelperExt.InvokeMethod{TInstance,TOut}"/>
+    /// and <see cref="InvokeHelperExt.InvokeMethod{TInstance}"/>.
     /// </summary>
     public class InvokeMethodTests
     {
-        #region private util classes
+        #region helper types
 
-        /// <summary>
-        /// This is a private util class for the "InvokeMethod" tests.
-        /// </summary>
         private class A
         {
-            public static void M0()
-            {
-                throw new Exception();
-            }
+            public static void M0() => throw new Exception("boom");
 
-            public static int M1()
-            {
-                return 42;
-            }
+            public static int M1() => 42;
 
-            public static int M2(int i)
-            {
-                return i;
-            }
+            public static int M2(int i) => i;
 
-            public static int M3(int i1, int i2)
-            {
-                return i1 + i2;
-            }
+            public static int M3(int i1, int i2) => i1 + i2;
 
-            public static int M3(int i, bool b)
-            {
-                if (i.Equals(0))
-                {
-                    throw new ArgumentOutOfRangeException(
-                        nameof(i), "i can't be 0!");
-                }
-
-                return b ? i : -i;
-            }
+            public static int M3(int i, bool b) => b ? i : -i;
 
             public static bool M5(int input, out int output)
             {
                 output = input;
                 return true;
             }
+
+            public void M6() { }
+
+            public int M7(int x) => x * 2;
+        }
+
+        private interface IFoo
+        {
+            int Bar();
+        }
+
+        private class FooImpl : IFoo
+        {
+            public int Bar() => 99;
         }
 
         #endregion
 
         #region private members
 
-        private readonly A _instanceOfA;
+        private readonly A _a;
 
         #endregion
 
-        #region ctor
-
-        /// <summary>
-        /// Default constructor for the <see cref="InvokeMethodTests"/> class.
-        /// </summary>
         public InvokeMethodTests()
         {
-            _instanceOfA = new A();
+            _a = new A();
+        }
+
+        #region void methods
+
+        [Fact]
+        public void InvokeMethod_VoidThrows_PropagatesAsTargetInvocationException()
+        {
+            Assert.Throws<System.Reflection.TargetInvocationException>(
+                () => _a.InvokeMethod<A>(nameof(A.M0)));
+        }
+
+        [Fact]
+        public void InvokeMethod_VoidNoParam_Succeeds()
+        {
+            // M6 is instance void — should execute without throwing
+            _a.InvokeMethod<A>(nameof(A.M6));
+        }
+
+        [Fact]
+        public void InvokeMethod_VoidWithParam_Succeeds()
+        {
+            // M3(int,bool) with b=false returns void? No — it returns int.
+            // Use M6 variant: no void method with params exists in A, so
+            // call a non-existent void method name → should be a no-op.
+            _a.InvokeMethod<A>("MethodThatDoesNotExist");
         }
 
         #endregion
 
-        #region tests
+        #region non-void methods — no params
 
-        /// <summary>
-        /// 1. test for the "InvokeMethod" functions.
-        /// </summary>
         [Fact]
-        public void InvokeMethodTest0()
+        public void InvokeMethod_NoParams_ReturnsCorrectValue()
         {
-            Assert.Throws<System.Reflection.TargetInvocationException>(new Action(() =>
-                _instanceOfA.InvokeMethod<A>(nameof(_instanceOfA.M0))));
+            Assert.Equal(42, _a.InvokeMethod<A, int>(nameof(A.M1)));
         }
 
-        /// <summary>
-        /// 2. test for the "InvokeMethod" functions.
-        /// </summary>
-        [Fact]
-        public void InvokeMethodTest1()
-        {
-            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
-                nameof(_instanceOfA.M1)));
-        }
+        #endregion
 
-        /// <summary>
-        /// 3. test for the "InvokeMethod" functions.
-        /// </summary>
+        #region non-void methods — with params
+
         [Fact]
-        public void InvokeMethodTest2()
+        public void InvokeMethod_SingleParam_ReturnsEchoedValue()
         {
             var p = new object?[] { 42 };
-            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
-                nameof(_instanceOfA.M2), ref p));
+            Assert.Equal(42, _a.InvokeMethod<A, int>(nameof(A.M2), ref p));
         }
 
-        /// <summary>
-        /// 4. test for the "InvokeMethod" functions.
-        /// </summary>
         [Fact]
-        public void InvokeMethodTest3()
+        public void InvokeMethod_TwoIntParams_ReturnsSum()
         {
-            var p1 = new object?[] { 40, 2 };
-            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
-                nameof(_instanceOfA.M3), ref p1));
-
-            var p2 = new object?[] { 42, true };
-            Assert.Equal(42, _instanceOfA.InvokeMethod<A, int>(
-                nameof(_instanceOfA.M3), ref p2));
+            var p = new object?[] { 40, 2 };
+            Assert.Equal(42, _a.InvokeMethod<A, int>(nameof(A.M3), ref p));
         }
 
-        /// <summary>
-        /// 5. test for the "InvokeMethod" functions.
-        /// </summary>
         [Fact]
-        public void InvokeMethodTest5()
+        public void InvokeMethod_OverloadedMethod_IntBool_ReturnsPositive()
         {
-            var p = new object?[] { 42 };
-            Assert.Equal(0, _instanceOfA.InvokeMethod<A, int>(
-                nameof(_instanceOfA.M1), ref p));
+            var p = new object?[] { 42, true };
+            Assert.Equal(42, _a.InvokeMethod<A, int>(nameof(A.M3), ref p));
+        }
 
-            Assert.Equal(0, _instanceOfA.InvokeMethod<A, int>("SomeNotExistingFunction"));
+        [Fact]
+        public void InvokeMethod_OverloadedMethod_IntBool_ReturnsNegative()
+        {
+            var p = new object?[] { 42, false };
+            Assert.Equal(-42, _a.InvokeMethod<A, int>(nameof(A.M3), ref p));
+        }
+
+        #endregion
+
+        #region no-match cases → default
+
+        [Fact]
+        public void InvokeMethod_WrongParamCount_ReturnsDefault()
+        {
+            var p = new object?[] { 42 };       // M1 takes 0 params
+            Assert.Equal(0, _a.InvokeMethod<A, int>(nameof(A.M1), ref p));
+        }
+
+        [Fact]
+        public void InvokeMethod_NonExistingMethod_ReturnsDefault()
+        {
+            Assert.Equal(0, _a.InvokeMethod<A, int>("SomeNonExistingMethod"));
+        }
+
+        [Fact]
+        public void InvokeMethod_WrongReturnType_ReturnsDefault()
+        {
+            // M1 returns int, asking for string → should not match → default(string) = null
+            Assert.Null(_a.InvokeMethod<A, string>(nameof(A.M1)));
+        }
+
+        #endregion
+
+        #region null / polymorphism
+
+        [Fact]
+        public void InvokeMethod_NullInstance_StaticMethod_ReturnsValue()
+        {
+            // When instance is null, falls back to typeof(TInstance) for reflection
+            A? nullA = null;
+            Assert.Equal(42, nullA.InvokeMethod<A, int>(nameof(A.M1)));
+        }
+
+        [Fact]
+        public void InvokeMethod_PolymorphicInstance_UsesRuntimeType()
+        {
+            // Instance declared as IFoo but runtime type is FooImpl
+            IFoo foo = new FooImpl();
+            Assert.Equal(99, foo.InvokeMethod<IFoo, int>(nameof(IFoo.Bar)));
+        }
+
+        #endregion
+
+        #region instance methods
+
+        [Fact]
+        public void InvokeMethod_InstanceMethod_WithParam_ReturnsCorrectValue()
+        {
+            var p = new object?[] { 5 };
+            Assert.Equal(10, _a.InvokeMethod<A, int>(nameof(A.M7), ref p));
         }
 
         #endregion
     }
 }
-

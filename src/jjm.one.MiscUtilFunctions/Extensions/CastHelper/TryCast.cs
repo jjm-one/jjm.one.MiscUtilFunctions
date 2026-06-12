@@ -1,11 +1,10 @@
-﻿using jjm.one.MiscUtilFunctions.Extensions.InvokeHelper;
 using System;
+using System.Reflection;
 
 namespace jjm.one.MiscUtilFunctions.Extensions.CastHelper
 {
     /// <summary>
-    /// A partial class containing multiple helper functions for casting
-    /// objects.
+    /// A partial class containing multiple helper functions for casting objects.
     /// </summary>
     public static partial class CastHelperExt
     {
@@ -21,31 +20,42 @@ namespace jjm.one.MiscUtilFunctions.Extensions.CastHelper
         {
             output = default;
 
+            // Direct cast via pattern matching (handles same-type and inheritance)
             if (input is TOut t)
             {
                 output = t;
                 return true;
             }
 
-            if (typeof(string) == typeof(TIn) &&
-                typeof(TOut).HasMethod("TryParse"))
+            // String → TOut: try the static TryParse(string, out TOut) if available
+            if (typeof(TIn) == typeof(string))
             {
-                var param = new object?[] { input?.ToString(), null };
-                if (output != null && output.InvokeMethod<TOut, bool>
-                        ("TryParse", ref param) && param is not null)
+                var targetType = Nullable.GetUnderlyingType(typeof(TOut)) ?? typeof(TOut);
+                var tryParseMethod = targetType.GetMethod(
+                    "TryParse",
+                    BindingFlags.Public | BindingFlags.Static,
+                    null,
+                    new[] { typeof(string), targetType.MakeByRefType() },
+                    null);
+
+                if (tryParseMethod != null)
                 {
-                    var res = param[1];
-                    if (res is not null)
+                    var args = new object?[] { input?.ToString(), null };
+                    if (tryParseMethod.Invoke(null, args) is true)
                     {
-                        output = (TOut)res;
+                        output = (TOut?)args[1];
                         return true;
                     }
+                    // Input was a valid string but TryParse rejected it — no point trying Convert
+                    return false;
                 }
             }
 
+            // Fallback: Convert.ChangeType handles numeric widening/narrowing, bool↔int, etc.
             try
             {
-                output = (TOut?)Convert.ChangeType(input, typeof(TOut));
+                var targetType = Nullable.GetUnderlyingType(typeof(TOut)) ?? typeof(TOut);
+                output = (TOut?)Convert.ChangeType(input, targetType);
                 return true;
             }
             catch (Exception)

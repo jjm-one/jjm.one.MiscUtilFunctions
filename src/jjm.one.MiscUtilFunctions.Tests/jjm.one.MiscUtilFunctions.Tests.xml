@@ -6,122 +6,30 @@
     <members>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests">
             <summary>
-            This class contains unit test for the CastHelper functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCastBoolInt1">
-            <summary>
-            Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> boot to int (successful) 1 .
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCastBoolInt2">
-            <summary>
-            Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> boot to int (successful) 2.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCastIntBool1">
-            <summary>
-            Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> int to bool (successful) 1.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCastIntBool2">
-            <summary>
-            Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> int to bool (successful) 2.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCastIntBool3">
-            <summary>
-            Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> int to bool (successful) 3.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.CastHelper.TryCastTests.TryCastStringInt1">
-            <summary>
-            Test <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/> string to int (successful) 1.
+            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)"/>.
             </summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests">
             <summary>
-            This class contains unit-tests for the "HasMethod" functions.
-            </summary>
-        </member>
-        <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.A">
-            <summary>
-            This is a private util class for the "InvokeMethod" tests.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethodTest1">
-            <summary>
-            1. test for the "HasMethod" functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.HasMethodTests.HasMethodTest2">
-            <summary>
-            2. test for the "HasMethod" functions.
+            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Type,System.String)"/>
+            and <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Object,System.String)"/>.
             </summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests">
             <summary>
-            This class contains unit-tests for the "InvokeMethod" functions.
-            </summary>
-        </member>
-        <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.A">
-            <summary>
-            This is a private util class for the "InvokeMethod" tests.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.#ctor">
-            <summary>
-            Default constructor for the <see cref="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests"/> class.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest0">
-            <summary>
-            1. test for the "InvokeMethod" functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest1">
-            <summary>
-            2. test for the "InvokeMethod" functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest2">
-            <summary>
-            3. test for the "InvokeMethod" functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest3">
-            <summary>
-            4. test for the "InvokeMethod" functions.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.InvokeHelper.InvokeMethodTests.InvokeMethodTest5">
-            <summary>
-            5. test for the "InvokeMethod" functions.
+            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``2(``0,System.String,System.Object[]@)"/>
+            and <see cref="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``1(``0,System.String,System.Object[]@)"/>.
             </summary>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests">
             <summary>
-            Unit-Tests for the AddUnique functions.
+            Unit tests for <see cref="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.IList{``0},``0)"/>.
             </summary>
         </member>
-        <member name="F:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests._list">
+        <member name="T:jjm.one.MiscUtilFunctions.Tests.FunctionsTests.InvokeHelper.InvokeMethodFktTests">
             <summary>
-            Private string list for the tests.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.#ctor">
-            <summary>
-            Ctor of the <see cref="T:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests"/> class.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.CanAddTest">
-            <summary>
-            Test tries to add an unique object to a list.
-            </summary>
-        </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Tests.ExtensionsTests.ListHelper.AddUniqueTests.CanNotAddTest">
-            <summary>
-            Test tries to add a non unique object to a list.
+            Unit tests for <see cref="T:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt"/> — the underlying static helper
+            that the extension methods delegate to.
             </summary>
         </member>
     </members>

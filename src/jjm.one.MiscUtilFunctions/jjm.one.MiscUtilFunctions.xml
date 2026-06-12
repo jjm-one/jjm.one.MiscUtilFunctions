@@ -6,8 +6,7 @@
     <members>
         <member name="T:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt">
             <summary>
-            A partial class containing multiple helper functions for casting
-            objects.
+            A partial class containing multiple helper functions for casting objects.
             </summary>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.CastHelper.CastHelperExt.TryCast``2(``0,``1@)">
@@ -31,19 +30,19 @@
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Type,System.String)">
             <summary>
-            Check if a specific type of object has a specific method.
+            Check if a specific type has a public method with the given name.
             </summary>
-            <param name="type">The specific type to check.</param>
-            <param name="methodName">The specific method name.</param>
-            <returns>True on success, else false.</returns>
+            <param name="type">The type to check.</param>
+            <param name="methodName">The method name to look for.</param>
+            <returns>True if the method exists, false otherwise.</returns>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.HasMethod(System.Object,System.String)">
             <summary>
-            Check if a specific object has a specific method.
+            Check if a specific object's runtime type has a public method with the given name.
             </summary>
-            <param name="obj">The specific object to check.</param>
-            <param name="methodName">The specific method name.</param>
-            <returns>True on success, else false.</returns>
+            <param name="obj">The object to check.</param>
+            <param name="methodName">The method name to look for.</param>
+            <returns>True if the method exists, false otherwise.</returns>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Extensions.InvokeHelper.InvokeHelperExt.InvokeMethod``2(``0,System.String,System.Object[]@)">
             <summary>
@@ -85,17 +84,29 @@
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt">
             <summary>
-            A partial class containing multiple helper functions for <see cref="T:System.Collections.Generic.List`1"/>.
+            A partial class containing multiple helper functions for <see cref="T:System.Collections.Generic.IList`1"/>.
             </summary>
         </member>
-        <member name="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.List{``0},``0)">
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.IList{``0},``0)">
             <summary>
-            Adds an object to a list, only if the list does not contain the object already.
+            Adds an object to the list only if it is not already present,
+            using the default equality comparer.
             </summary>
             <typeparam name="T">The type of the objects in the list.</typeparam>
             <param name="list">The list.</param>
-            <param name="obj">The object which should be added to the list.</param>
-            <returns>True if the object was added to the list, else false.</returns>
+            <param name="obj">The object to add.</param>
+            <returns>True if the object was added, false if it was already present.</returns>
+        </member>
+        <member name="M:jjm.one.MiscUtilFunctions.Extensions.ListHelper.ListHelperExt.AddUnique``1(System.Collections.Generic.IList{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            Adds an object to the list only if it is not already present,
+            using the specified equality comparer.
+            </summary>
+            <typeparam name="T">The type of the objects in the list.</typeparam>
+            <param name="list">The list.</param>
+            <param name="obj">The object to add.</param>
+            <param name="comparer">The equality comparer to use.</param>
+            <returns>True if the object was added, false if it was already present.</returns>
         </member>
         <member name="T:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt">
             <summary>
@@ -105,40 +116,40 @@
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``2(``0,System.String,System.Object[]@)">
             <summary>
-            Invoke a  non void method on an object.
+            Invoke a non-void method on an object.
             </summary>
             <typeparam name="TInstance">The type of the object.</typeparam>
             <typeparam name="TOut">The return type.</typeparam>
-            <param name="instance">The instance if the object.</param>
+            <param name="instance">The instance of the object (may be null for static methods).</param>
             <param name="methodName">The name of the method.</param>
             <param name="paramList">The method parameters as an object array.</param>
             <returns>The result of the invoked method.</returns>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``2(``0,System.String)">
             <summary>
-            Invoke a  non void method on an object.
+            Invoke a non-void method on an object.
             </summary>
             <typeparam name="TInstance">The type of the object.</typeparam>
             <typeparam name="TOut">The return type.</typeparam>
-            <param name="instance">The instance if the object.</param>
+            <param name="instance">The instance of the object (may be null for static methods).</param>
             <param name="methodName">The name of the method.</param>
             <returns>The result of the invoked method.</returns>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``1(``0,System.String,System.Object[]@)">
             <summary>
-            Invoke a  non void method on an object.
+            Invoke a void method on an object.
             </summary>
             <typeparam name="TInstance">The type of the object.</typeparam>
-            <param name="instance">The instance if the object.</param>
+            <param name="instance">The instance of the object (may be null for static methods).</param>
             <param name="methodName">The name of the method.</param>
             <param name="paramList">The method parameters as an object array.</param>
         </member>
         <member name="M:jjm.one.MiscUtilFunctions.Functions.InvokeHelper.InvokeHelperFkt.InvokeMethod``1(``0,System.String)">
             <summary>
-            Invoke a  non void method on an object.
+            Invoke a void method on an object.
             </summary>
             <typeparam name="TInstance">The type of the object.</typeparam>
-            <param name="instance">The instance if the object.</param>
+            <param name="instance">The instance of the object (may be null for static methods).</param>
             <param name="methodName">The name of the method.</param>
         </member>
     </members>

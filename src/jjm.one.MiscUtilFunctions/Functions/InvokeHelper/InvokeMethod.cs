@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
 {
@@ -6,58 +6,43 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
     /// A partial class containing multiple helper functions for invoking
     /// functions and methods.
     /// </summary>
-	public static partial class InvokeHelperFkt
-	{
+    public static partial class InvokeHelperFkt
+    {
         #region non void function to invoke
 
         /// <summary>
-        /// Invoke a  non void method on an object.
+        /// Invoke a non-void method on an object.
         /// </summary>
         /// <typeparam name="TInstance">The type of the object.</typeparam>
         /// <typeparam name="TOut">The return type.</typeparam>
-        /// <param name="instance">The instance if the object.</param>
+        /// <param name="instance">The instance of the object (may be null for static methods).</param>
         /// <param name="methodName">The name of the method.</param>
         /// <param name="paramList">The method parameters as an object array.</param>
         /// <returns>The result of the invoked method.</returns>
         public static TOut? InvokeMethod<TInstance, TOut>(TInstance? instance,
-			string methodName, ref object?[]? paramList)
-		{
-			if (typeof(TInstance) != instance?.GetType())
-			{
-				return default;
-			}
-
-			var typeMethodInfoList = instance?.GetType().GetMethods();
-
-            if (typeMethodInfoList is null)
-            {
-                return default;
-            }
+            string methodName, ref object?[]? paramList)
+        {
+            var type = instance?.GetType() ?? typeof(TInstance);
+            var typeMethodInfoList = type.GetMethods();
 
             foreach (var mI in typeMethodInfoList)
             {
-                if (!mI.Name.Contains(methodName))
-                {
+                if (mI.Name != methodName)
                     continue;
-                }
 
                 if (mI.ReturnType != typeof(TOut))
-                {
                     continue;
-                }
 
                 var methodParamInfos = mI.GetParameters();
 
-                if (!methodParamInfos.Length.Equals(paramList?.Length))
-                {
+                if (methodParamInfos.Length != (paramList?.Length ?? 0))
                     continue;
-                }
 
                 var mismatch = false;
 
                 for (var i = 0; i < methodParamInfos.Length; i++)
                 {
-                    if (paramList[i] is null ||
+                    if (paramList![i] is null ||
                         methodParamInfos[i].ParameterType == paramList[i]?.GetType())
                     {
                         continue;
@@ -68,9 +53,7 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
                 }
 
                 if (mismatch)
-                {
                     continue;
-                }
 
                 return (TOut?)mI.Invoke(instance, paramList);
             }
@@ -79,11 +62,11 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
         }
 
         /// <summary>
-        /// Invoke a  non void method on an object.
+        /// Invoke a non-void method on an object.
         /// </summary>
         /// <typeparam name="TInstance">The type of the object.</typeparam>
         /// <typeparam name="TOut">The return type.</typeparam>
-        /// <param name="instance">The instance if the object.</param>
+        /// <param name="instance">The instance of the object (may be null for static methods).</param>
         /// <param name="methodName">The name of the method.</param>
         /// <returns>The result of the invoked method.</returns>
         public static TOut? InvokeMethod<TInstance, TOut>(TInstance? instance,
@@ -98,51 +81,36 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
         #region void function to invoke
 
         /// <summary>
-        /// Invoke a  non void method on an object.
+        /// Invoke a void method on an object.
         /// </summary>
         /// <typeparam name="TInstance">The type of the object.</typeparam>
-        /// <param name="instance">The instance if the object.</param>
+        /// <param name="instance">The instance of the object (may be null for static methods).</param>
         /// <param name="methodName">The name of the method.</param>
         /// <param name="paramList">The method parameters as an object array.</param>
         public static void InvokeMethod<TInstance>(TInstance? instance,
             string methodName, ref object?[]? paramList)
         {
-            if (typeof(TInstance) != instance?.GetType())
-            {
-                return;
-            }
-
-            var typeMethodInfoList = instance?.GetType().GetMethods();
-
-            if (typeMethodInfoList is null)
-            {
-                return;
-            }
+            var type = instance?.GetType() ?? typeof(TInstance);
+            var typeMethodInfoList = type.GetMethods();
 
             foreach (var mI in typeMethodInfoList)
             {
-                if (!mI.Name.Contains(methodName))
-                {
+                if (mI.Name != methodName)
                     continue;
-                }
 
                 if (mI.ReturnType != typeof(void))
-                {
                     continue;
-                }
 
                 var methodParamInfos = mI.GetParameters();
 
-                if (!methodParamInfos.Length.Equals(paramList?.Length))
-                {
+                if (methodParamInfos.Length != (paramList?.Length ?? 0))
                     continue;
-                }
 
                 var mismatch = false;
 
                 for (var i = 0; i < methodParamInfos.Length; i++)
                 {
-                    if (paramList[i] is null ||
+                    if (paramList![i] is null ||
                         methodParamInfos[i].ParameterType == paramList[i]?.GetType())
                     {
                         continue;
@@ -153,19 +121,18 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
                 }
 
                 if (mismatch)
-                {
                     continue;
-                }
 
                 mI.Invoke(instance, paramList);
+                return;
             }
         }
 
         /// <summary>
-        /// Invoke a  non void method on an object.
+        /// Invoke a void method on an object.
         /// </summary>
         /// <typeparam name="TInstance">The type of the object.</typeparam>
-        /// <param name="instance">The instance if the object.</param>
+        /// <param name="instance">The instance of the object (may be null for static methods).</param>
         /// <param name="methodName">The name of the method.</param>
         public static void InvokeMethod<TInstance>(TInstance? instance,
             string methodName)
@@ -177,4 +144,3 @@ namespace jjm.one.MiscUtilFunctions.Functions.InvokeHelper
         #endregion
     }
 }
-
